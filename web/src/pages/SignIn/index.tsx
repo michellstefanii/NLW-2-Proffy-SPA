@@ -6,7 +6,7 @@ import logoImg from "../../assets/images/logo.svg";
 
 import "./styles.css";
 
-const Register: React.FC = () => {
+const SignIn: React.FC = () => {
   const history = useHistory();
 
   const { signIn } = useContext(AuthContext);
@@ -27,41 +27,17 @@ const Register: React.FC = () => {
   return (
     <div id="page-login">
       <div id="page-login-content" className="container">
-        <div className="logo-container">
+        <div className="logo-login-container">
           <img src={logoImg} alt="Proffy" />
           <h2>Sua plataforma de estudos online.</h2>
         </div>
 
         <div className="login-form">
-          <form onSubmit={handleSign}>
-            <h1>Crie sua conta</h1>
-            <input
-              className="input"
-              placeholder="Nome"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          <form name="Loggin" onSubmit={handleSign}>
+            <h1>Faça seu Login</h1>
             <input
               className="input"
               placeholder="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="input"
-              placeholder="Avatar"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="input"
-              placeholder="Whatsapp"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="input"
-              placeholder="Bio"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -72,22 +48,14 @@ const Register: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input
-              className="input"
-              type="password"
-              placeholder="Repita a Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
         <div className="buttons-login-container">
-            <button type="submit"  className="register-classes">
-                Criar conta
-            </button>
-
-            <button className="login" onClick={() => history.push('/login')} >
+            <button className="login" type="submit">
                 Entrar
             </button>
 
+            <button type="button" onClick={() => history.push('/register')} className="register-classes">
+                Registrar
+            </button>
         </div>
           </form>
         </div>
@@ -96,4 +64,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default SignIn;

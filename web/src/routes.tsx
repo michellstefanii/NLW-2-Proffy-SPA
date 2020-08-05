@@ -3,20 +3,20 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import Landing from './pages/Landing';
 import TeacherList from './pages/TeacherList';
 import TeacherForm from './pages/TeacherForm';
-import Login from './pages/Login';
+import SignIn from './pages/SignIn';
 import Register from './pages/Register';
-
-import { Context } from './services/AuthContext';
+import AuthContext from './contexts/auth';
 
 function CustomRoute({ isPrivate , ...rest }: any) {
-  const { authenticated } = useContext(Context);
 
-  if (isPrivate && !authenticated) {
-    return <Redirect to="/" />
+  const { signed } = useContext(AuthContext);
+
+  if (isPrivate && !signed) {
+    return <Redirect to="/login" />
   }
 
-  if (!(isPrivate) && authenticated) {
-      return <Redirect to="/home" />
+  if (!(isPrivate) && signed) {
+      return <Redirect to="/" />
     }
 
   return <Route {...rest} />;
@@ -27,10 +27,10 @@ const Routes: React.FC = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Landing} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={SignIn} />
           <Route path="/register" component={Register} />
-          <CustomRoute isPrivate path="/study" component={TeacherList} />
-          <CustomRoute isPrivate path="/give-classes" component={TeacherForm} />
+          <CustomRoute path="/study" component={TeacherList} />
+          <CustomRoute path="/give-classes" component={TeacherForm} />
         </Switch>
       </Router>
   );
