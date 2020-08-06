@@ -1,97 +1,103 @@
-import React, { useState, useContext } from "react";
+import React, { useState, FormEvent, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import AuthContext from "../../contexts/auth";
-
-import logoImg from "../../assets/images/logo.svg";
 
 import "./styles.css";
+import Input from "../../components/Input";
+import Textarea from "../../components/Textarea";
+import PageHeader from "../../components/PageHeader";
+import api from "../../services/api";
+import AuthContext from "../../contexts/auth";
 
 const Register: React.FC = () => {
   const history = useHistory();
 
   const { signIn } = useContext(AuthContext);
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [bio, setBio] = useState('');
 
-  async function handleSign(e: any) {
+  async function handleRegister(e: FormEvent) {
     e.preventDefault();
     try {
-      await signIn(email, password);
-      history.push("/");
+      await api.post('users', {
+        name,
+        email,
+        password,
+        avatar,
+        whatsapp,
+        bio,
+      }).then(() => {
+        signIn(email, password);
+      });
+      history.push("/")
     } catch (err) {
       alert(err);
     }
   }
 
   return (
-    <div id="page-login">
-      <div id="page-login-content" className="container">
-        <div className="logo-container">
-          <img src={logoImg} alt="Proffy" />
-          <h2>Sua plataforma de estudos online.</h2>
-        </div>
-
-        <div className="login-form">
-          <form onSubmit={handleSign}>
-            <h1>Crie sua conta</h1>
-            <input
-              className="input"
-              placeholder="Nome"
+    <div id="page-register-form" className="container">
+      <PageHeader
+        title="Que maneiro que você quer se registrar."
+        description="O primeiro passo é preencher o formulario de cadastro"
+      />
+      <main>
+        <form onSubmit={handleRegister}>
+          <fieldset>
+            <legend>Crie sua conta</legend>
+            <Input
+              name="name"
+              label="Nome completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              name="email"
+              label="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              className="input"
-              placeholder="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+            <Input
+              name="avatar"
+              label="Avatar"
+              value={avatar}
+              onChange={(e) => setAvatar(e.target.value)}
             />
-            <input
-              className="input"
-              placeholder="Avatar"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+            <Input
+              name="whatsapp"
+              label="Whatsapp"
+              value={whatsapp}
+              onChange={(e) => setWhatsapp(e.target.value)}
             />
-            <input
-              className="input"
-              placeholder="Whatsapp"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+            <Textarea
+              name="bio"
+              label="Biografia"
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
             />
-            <input
-              className="input"
-              placeholder="Bio"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="input"
+            <Input
               type="password"
-              placeholder="Senha"
+              name="Senha"
+              label="Senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <input
-              className="input"
-              type="password"
-              placeholder="Repita a Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-        <div className="buttons-login-container">
-            <button type="submit"  className="register-classes">
-                Criar conta
+          </fieldset>
+          <footer>
+            <button type="submit">
+              Salvar cadastro
             </button>
 
-            <button className="login" onClick={() => history.push('/login')} >
-                Entrar
+            <button onClick={() => history.push('/login')}>
+              Já tenho cadastro
             </button>
-
-        </div>
-          </form>
-        </div>
-      </div>
+          </footer>
+        </form>
+      </main>
     </div>
   );
 };

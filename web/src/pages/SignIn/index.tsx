@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, FormEvent } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../contexts/auth";
 
-import logoImg from "../../assets/images/logo.svg";
-
 import "./styles.css";
+import PageHeader from "../../components/PageHeader";
+import Input from "../../components/Input";
 
 const SignIn: React.FC = () => {
   const history = useHistory();
@@ -14,7 +14,7 @@ const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleSign(e: any) {
+  async function handleSign(e: FormEvent) {
     e.preventDefault();
     try {
       await signIn(email, password);
@@ -25,41 +25,39 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <div id="page-login">
-      <div id="page-login-content" className="container">
-        <div className="logo-login-container">
-          <img src={logoImg} alt="Proffy" />
-          <h2>Sua plataforma de estudos online.</h2>
-        </div>
-
-        <div className="login-form">
-          <form name="Loggin" onSubmit={handleSign}>
-            <h1>Faça seu Login</h1>
-            <input
-              className="input"
-              placeholder="E-mail"
+    <div id="page-login-form" className="container">
+      <PageHeader
+        title="Digite seus dados para entrar na plataforma."
+      />
+      <main>
+          <form onSubmit={handleSign}>
+          <fieldset>
+          <legend>Faça seu login</legend>
+          <Input
+              name="email"
+              label="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              className="input"
+            <Input
               type="password"
-              placeholder="Senha"
+              name="Senha"
+              label="Senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-        <div className="buttons-login-container">
-            <button className="login" type="submit">
-                Entrar
+          </fieldset>
+          <footer>
+            <button type="submit">
+              Entrar
             </button>
-
-            <button type="button" onClick={() => history.push('/register')} className="register-classes">
-                Registrar
+              
+            <button onClick={() => history.push('/register')}>
+              Criar conta
             </button>
-        </div>
-          </form>
-        </div>
-      </div>
+          </footer>
+        </form>
+      </main>
     </div>
   );
 };

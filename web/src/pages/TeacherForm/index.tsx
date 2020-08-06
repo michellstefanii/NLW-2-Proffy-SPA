@@ -1,26 +1,26 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useContext } from 'react';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
-import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
+import { useHistory } from 'react-router-dom';
+import api from '../../services/api';
+import AuthContext from '../../contexts/auth';
 
 import warningIcon from '../../assets/images/icons/warning.svg'
 
 import './styles.css'
 
+
 const TeacherForm: React.FC = () => {
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [bio, setBio] = useState('');
+  const history = useHistory();
 
   const [subject, setSubject] = useState('');
-  const [cost, setCost] = useState('');
-
-
+  const [cost, setCost] = useState(0);
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' }
   ])
+
+  const { user } = useContext(AuthContext);
 
   function addNewScheduleItem() {
     setScheduleItems([
@@ -43,14 +43,16 @@ const TeacherForm: React.FC = () => {
 
   function handleCreateClass(e: FormEvent) {
     e.preventDefault();
-    console.log({
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost
-    })
+    try {
+      api.post('classes', {
+        subject,
+        cost,
+        user_id: user.id,
+        schedule: scheduleItems,
+      }).then(() => history.push('/'))
+    } catch (err) {
+      alert(err);
+    }
   }
 
   return (
@@ -62,35 +64,6 @@ const TeacherForm: React.FC = () => {
 
     <main>
     <form onSubmit={handleCreateClass}>
-      <fieldset>
-        <legend>Seus dados</legend>
-        <Input 
-          name="name" 
-          label="Nome completo" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-        />
-        <Input 
-          name="avatar" 
-          label="Avatar" 
-          value={avatar} 
-          onChange={(e) => setAvatar(e.target.value)} 
-        />
-        <Input 
-          name="whatsapp" 
-          label="Whatsapp"
-          value={whatsapp} 
-          onChange={(e) => setWhatsapp(e.target.value)} 
-        />
-        <Textarea 
-          name="bio" 
-          label="Biografia" 
-          value={bio} 
-          onChange={(e) => setBio(e.target.value)} 
-        />
-
-      </fieldset>
-
       <fieldset>
         <legend>Sobre a aula</legend>
 
@@ -112,7 +85,7 @@ const TeacherForm: React.FC = () => {
           name="cost" 
           label="Custo da sua hora por aula"
           value={cost}
-          onChange={(e) => { setCost(e.target.value) }} 
+          onChange={(e) => { setCost(Number(e.target.value)) }} 
           />
 
       </fieldset>
@@ -170,7 +143,7 @@ const TeacherForm: React.FC = () => {
         </p>
 
         <button type="submit">
-          Salvar cadastro
+          Salvar aula
         </button>
       </footer>
       </form>

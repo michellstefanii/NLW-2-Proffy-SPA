@@ -4,24 +4,24 @@ const api = axios.create({
     baseURL: 'http://localhost:3333',
 });
 
-api.interceptors.response.use(
-    response => {  
-      return response
-    },
-    error => { 
-      if (error.response.status === 401) {
-        const requestConfig = error.config
+// api.interceptors.response.use(
+//     response => {  
+//       return response
+//     },
+//     error => { 
+//       if (error.response.status === 401) {
+//         const requestConfig = error.config
   
-        localStorage.removeItem('token');
-        localStorage.removeItem('name');
-        api.defaults.headers.Authorization = undefined;
-        window.location.reload()  
+//         localStorage.removeItem('token');
+//         localStorage.removeItem('name');
+//         api.defaults.headers.Authorization = undefined;
+//         window.location.reload()  
   
-        return axios(requestConfig)
-      }
+//         return axios(requestConfig)
+//       }
   
-      return Promise.reject(error)
-    },
-  )
+//       return Promise.reject(error)
+//     },
+//   )
 
 export default api

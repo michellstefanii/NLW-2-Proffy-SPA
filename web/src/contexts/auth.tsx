@@ -3,7 +3,14 @@ import api from "../services/api";
 
 interface AuthContextData {
   signed: boolean;
-  user: object | null;
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+    avatar: string;
+    bio: string;
+  }
   signIn(email: string, password: string): void;
   signOut(): void;
 }
@@ -11,35 +18,33 @@ interface AuthContextData {
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<object | null>(null);
+  const [user, setUser] = useState();
   const [token, setToken] = useState(() => {
-      return localStorage.getItem('token');
+    return localStorage.getItem('token');
   })
 
   useEffect(() => {
     if (token) {
-        api.defaults.headers.Authorization = `Bearer ${token}`
+      api.defaults.headers.Authorization = `Bearer ${token}`
     } else {
-        api.defaults.headers.Authorization = undefined
-        localStorage.removeItem('token');
+      api.defaults.headers.Authorization = undefined
+      localStorage.removeItem('token');
     }
-    }, [token]);
+  }, [token]);
 
   async function signIn(email: string, password: string) {
 
     await api.post('users/auth', { email, password }).then((res: any) => {
-        localStorage.setItem('token', res.data.token)
-        localStorage.setItem('name', res.data.user.name)
-        setUser(res.data.user)
-        setToken(token)
-        api.defaults.headers.Authorization = `Bearer ${token}`
+      localStorage.setItem('token', res.data.token);
+      setUser(res.data.user)
+      setToken(token)
+      api.defaults.headers.Authorization = `Bearer ${res.data.token}`
     })
   }
 
   function signOut() {
     localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    setUser(null);
+    setUser(undefined);
   }
 
   return (

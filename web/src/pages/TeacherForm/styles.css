@@ -96,6 +96,7 @@
     transition: background-color 0.2s;
     margin-top: 3.2rem;
     outline: none;
+    cursor: pointer;
 }
 
 #page-teacher-form main footer button:hover {

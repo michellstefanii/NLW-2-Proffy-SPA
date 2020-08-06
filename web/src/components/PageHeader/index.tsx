@@ -13,24 +13,26 @@ interface Props {
 }
 
 const PageHeader: React.FC<Props> = (props) => {
-  const { signOut } = useContext(AuthContext);
+  const { signOut, user, signed } = useContext(AuthContext);
 
   function handleSignOut() {
     signOut();
+  }
+
+  function logged() {
+    if (signed){
+    return (<div><p>Olá {user.name}</p> <button onClick={handleSignOut}> Sair</button></div>)}
   }
   
   return (
     <header className="page-header">
     <div className="top-bar-container">
-      <Link to="/">
+    <Link to="/">
         <img src={backIcon} alt="Voltar"/>
-      </Link>
-      <button onClick={handleSignOut}>
-        <span>Sair</span>
-      </button>
+    </Link>
+    {logged()}
       <img src={logoImg} alt="Proffy"/>
     </div>
-
     <div className="header-content">
       <strong>{props.title}</strong>
       { props.description && <p>{props.description}</p> }
