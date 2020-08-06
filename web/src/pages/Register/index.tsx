@@ -33,7 +33,7 @@ const Register: React.FC = () => {
       }).then(() => {
         signIn(email, password);
       });
-      history.push("/")
+      history.push("/");
     } catch (err) {
       alert(err);
     }

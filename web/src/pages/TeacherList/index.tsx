@@ -5,7 +5,7 @@ import TeacherItem, { Classe } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 
-import './styles.css'
+import './styles.css';
 import api from '../../services/api';
 
 const TeacherList: React.FC = () => {
@@ -25,7 +25,6 @@ const TeacherList: React.FC = () => {
           time
         }
       }).then((res) => setClasses(res.data));
-      console.log(classes)
     } catch (err) {
       alert(err)
     }

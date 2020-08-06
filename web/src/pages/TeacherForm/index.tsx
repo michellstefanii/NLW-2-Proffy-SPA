@@ -1,15 +1,15 @@
 import React, { useState, FormEvent, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
-import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import AuthContext from '../../contexts/auth';
 
-import warningIcon from '../../assets/images/icons/warning.svg'
+import warningIcon from '../../assets/images/icons/warning.svg';
 
-import './styles.css'
-
+import './styles.css';
 
 const TeacherForm: React.FC = () => {
   const history = useHistory();
@@ -18,7 +18,7 @@ const TeacherForm: React.FC = () => {
   const [cost, setCost] = useState(0);
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' }
-  ])
+  ]);
 
   const { user } = useContext(AuthContext);
 
@@ -49,7 +49,7 @@ const TeacherForm: React.FC = () => {
         cost,
         user_id: user.id,
         schedule: scheduleItems,
-      }).then(() => history.push('/'))
+      }).then(() => history.push('/'));
     } catch (err) {
       alert(err);
     }
@@ -86,7 +86,7 @@ const TeacherForm: React.FC = () => {
           label="Custo da sua hora por aula"
           value={cost}
           onChange={(e) => { setCost(Number(e.target.value)) }} 
-          />
+        />
 
       </fieldset>
 
