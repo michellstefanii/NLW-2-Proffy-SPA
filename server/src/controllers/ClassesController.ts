@@ -46,14 +46,13 @@ export default class ClassesController {
         const {
             subject,
             cost,
-            user_id,
             schedule
         } = req.body;
     
-        if (subject == '' || cost == '' || user_id == '' || schedule == '')
+        if (subject == '' || cost == '' || schedule == '')
             return res.status(400).send({ error: 'Preencha todos os dados' });
     
-        const use = await db('users').select().where('id', user_id);
+        const use = await db('users').select().where('id', req.params.userId);
         if (!(use[0]))
             return res.status(400).send({ error: 'User not exists' });
     
@@ -63,7 +62,7 @@ export default class ClassesController {
             const insertedClassesIds = await trx('classes').insert({
                 subject,
                 cost,
-                user_id,
+                user_id: req.params.userId,
             });
     
             const class_id = insertedClassesIds[0];

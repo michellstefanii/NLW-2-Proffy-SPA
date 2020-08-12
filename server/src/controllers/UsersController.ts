@@ -74,6 +74,10 @@ export default class UsersController {
                 }
     }
 
+    async authenticated(req: Request, res: Response) {
+        return res.json();
+    }
+
     // async index(req, res, next) {
     //     try {
     //         const users = await db('users').select('*')

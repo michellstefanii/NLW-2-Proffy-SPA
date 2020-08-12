@@ -20,7 +20,7 @@ const Landing: React.FC = () => {
         api.get('connections').then((res) => {
             setTotalConnections(res.data.total)
         })
-    },[])
+    },[totalConnections])
 
   return (
     <div id="page-landing">

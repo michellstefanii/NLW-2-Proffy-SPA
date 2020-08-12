@@ -1,11 +1,10 @@
-import React, { useState, FormEvent, useContext } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import api from '../../services/api';
-import AuthContext from '../../contexts/auth';
 
 import warningIcon from '../../assets/images/icons/warning.svg';
 
@@ -19,8 +18,6 @@ const TeacherForm: React.FC = () => {
   const [scheduleItems, setScheduleItems] = useState([
     { week_day: 0, from: '', to: '' }
   ]);
-
-  const { user } = useContext(AuthContext);
 
   function addNewScheduleItem() {
     setScheduleItems([
@@ -47,7 +44,6 @@ const TeacherForm: React.FC = () => {
       api.post('classes', {
         subject,
         cost,
-        user_id: user.id,
         schedule: scheduleItems,
       }).then(() => history.push('/'));
     } catch (err) {

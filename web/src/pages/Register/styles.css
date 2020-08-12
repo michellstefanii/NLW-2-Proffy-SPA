@@ -1,143 +1,208 @@
-#page-register-form {
+#register-form-container {
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-#page-register-form .page-header .header-content {
-    margin-bottom: 6.4rem;
+#register-form-container .register-logo-container  {
+    display: none;
 }
 
-#page-register-form main {
-    background-color: var(--color-box-base);
+#register-form-container .left-container {
+    flex: 1;
+    color: #E5E5E5;
+}
+
+#register-form-container .left-container .top-bar-container {
+    position: relative;
+    text-align: center;
+    left: -15rem;
+    top: 1rem;
+    margin-bottom: 5rem;
+}
+
+#register-form-container .left-container .top-bar-container a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+#register-form-container .left-container .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+#register-form-container .left-container .top-bar-container > img {
+    height: 1.6rem;
+}
+
+#register-form-container .left-container form {
     width: 100%;
     max-width: 74rem;
     border-radius: 0.8rem;
     margin: -3.2rem auto 3.2rem;
-    padding-top: 6.4rem;
     overflow: hidden;
-}
 
-#page-register-form main fieldset {
-    border: 0;
-    padding: 0 2.4rem;
-}
-
-#page-register-form main fieldset + fieldset {
-    margin-top: 6.4rem;
-}
-
-#page-register-form main fieldset legend {
-    font: 700 2.4rem Archivo;
-    color: var(--color-text-title);
-    margin-bottom: 2.4rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 1.6rem;
-    border-bottom: 1px solid var(--color-line-in-white);
-}
-
-#page-register-form main fieldset legend button {
-    background: none;
-    border: 0;
-    color: var(--color-primary);
-    font: 700 1.6rem Archivo;
-    cursor: pointer;
-    transition: color 0.2s;
-    outline: none;
-}
-
-#page-register-form main fieldset legend button:hover {
-    color: var(--color-primary-dark);
-}
-
-#page-register-form main fieldset .input-block + .textarea-block,
-#page-register-form main fieldset .select-block + .input-block {
-    margin-top: 2.4rem;
-}
-
-#page-register-form main label {
-    color: var(--color-text-complement);
-}
-
-#page-register-form main footer {
-    padding: 4rem 2.4rem;
-    background: var(--color-box-footer);
-    border-top: 1px solid var(--color-line-in-white);
-    margin-top: 2.4rem;
-}
-
-#page-register-form main footer button {
-    width: 100%;
-    height: 5.6rem;
-    background: var(--color-secundary);
-    color: var(--color-button-text);
-    border: 0;
-    border-radius: 0.8rem;
-    font: 700 1.6rem Archivo;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    outline: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#register-form-container .left-container form h2 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 36px;
+    color: #32264D;
+    margin-bottom: 1.5rem;
+    margin-left: -18rem;
+}
+
+#register-form-container .left-container form p {
+    margin-bottom: 4rem;   
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 26px;
+    color: #6A6180;
+    margin-left: -10rem;
+    max-width: 25rem;
+}
+
+#register-form-container .left-container form #leftborder {
+    width: 352px;
+    height: 72px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0px 0px;
+    margin-top: 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #9C98A6;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+#register-form-container .left-container form .input-block + .input-block {
+    margin-top: 0;
+}
+
+#register-form-container .left-container form .input-block + .input-block #leftborder {
+    border-top: none;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#register-form-container .left-container form .input-block:focus-within::after {
+    width: 2px;
+    height: calc(100% - 2rem);
+    content: '';
+    background: var(--color-primary-light);
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 0rem;
+}
+
+#register-form-container .left-container form .input-block label {
+    font-size: 1.2rem;
+    position: absolute;
+    left: 1.1rem;  
+    top: 0.5rem; 
+    color: #C1BCCC;
+}
+
+#register-form-container .left-container form .password-container {
+    position: relative;
+}
+
+#register-form-container .left-container form .password-container #leftborder {
+    border-top: none;
+    border-radius: 0px 0px 8px 8px;
+}
+
+
+#register-form-container .left-container form .password-container img {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
     cursor: pointer;
 }
 
-#page-register-form main footer button + button {
-    background: var(--color-primary-lighter);
-    color: var(--color-button-text);
-    margin-top: 1rem;
+#register-form-container .left-container form footer button {
+    margin-top: 4rem;
+    width: 352px;
+    height: 56px;
+    border-style: none;
+    background: #DCDCE6;
+    border-radius: 8px;
+    outline: none;
 }
 
-#page-register-form main footer button:hover {
-    background: var(--color-secundary-dark);
+#register-form-container .left-container form footer button:hover {
+    background: #04D361;
+    color: #FFF;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-#page-register-form main footer button + button:hover {
-    background: var(--color-primary-light);
-}
-
-@media (min-width: 700px) {
-    #page-register-form {
-        max-width: 100vw;
-    }
-
-    #page-register-form .page-header .header-content {
-        margin-bottom: 0;
-    }
-
-    #page-register-form main fieldset {
-        padding: 0 6.4rem;
-    }
-
-    #page-register-form main .schedule-item {
+@media (min-width: 900px) {
+    #register-form-container {
+        max-width: 100%;
+        
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        column-gap: 1.6rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "register logo"
+        ;
     }
 
-    #page-register-form main .schedule-item .input-block {
-        margin-top: 0 !important;
-    }
-
-    #page-register-form main footer {
-        padding: 4.0rem 6.4rem;
+    #register-form-container .register-logo-container {
+        grid-area: logo;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        background-image: url("../../assets/images/Background.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: var(--color-primary);
+        height: 100%;
+        text-align: center;
+        color: var(--color-text-in-primary);
+        justify-content: center;
     }
 
-    #page-teacher-form main footer p {
-        justify-content: space-between;
+    #register-form-container .register-logo-container img {
+        height: 10rem;
+    }
+    
+    #register-form-container .register-logo-container h2 {
+        font-weight: 500;
+        font-size: 2.4rem;
+        line-height: 4.6rem;
+        margin-top: 0.8rem;
     }
 
-    #page-teacher-form main footer button {
-        width: 20rem;
-        margin-right: 0rem;
-        margin-top: 0;
+    #register-form-container .left-container {
+        grid-area: register;
+        color: #E5E5E5;
+    }
+
+    #register-form-container .left-container .top-bar-container {
+        position: relative;
+        text-align: center;
+        left: -15rem;
+        margin-bottom: 0;
+        top: calc(100vh - 110vh);
     }
 }

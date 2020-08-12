@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Response } from 'express';
 import UsersController from './controllers/UsersController';
 import ClassesController from './controllers/ClassesController';
 import ConnectionsController from './controllers/ConnectionsController';
@@ -14,6 +14,8 @@ const connectionsController = new ConnectionsController();
 routes.post('/users', usersController.create);
 // Session
 routes.post('/users/auth', usersController.auth)
+
+routes.post('/users/authenticated', authMiddleware.auth, usersController.authenticated)
 
 routes.post('/classes', authMiddleware.auth, classesController.create);
 routes.get('/classes', authMiddleware.auth, classesController.index);

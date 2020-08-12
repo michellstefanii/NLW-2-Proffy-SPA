@@ -1,105 +1,113 @@
-import React, { useState, FormEvent, useContext } from "react";
-import { useHistory } from "react-router-dom";
-
-import "./styles.css";
-import Input from "../../components/Input";
-import Textarea from "../../components/Textarea";
-import PageHeader from "../../components/PageHeader";
+import React, { useState, FormEvent, useContext } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import Input from '../../components/Input';
 import api from "../../services/api";
 import AuthContext from "../../contexts/auth";
 
+import logoImg from '../../assets/images/logo.svg'
+import eyeImg from '../../assets/images/icons/eye-regular.svg'
+import eyeBlockImg from '../../assets/images/icons/eye-slash-regular.svg'
+import backIcon from '../../assets/images/icons/back.svg'
+
+import './styles.css';
+
 const Register: React.FC = () => {
-  const history = useHistory();
+    const history = useHistory();
 
-  const { signIn } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
+    
+    const [name, setName] = useState('');
+    const [whatsapp, setWhatsapp] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [avatar, setAvatar] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [bio, setBio] = useState('');
+    async function handleRegister(e: FormEvent) {
+        e.preventDefault();
+        try {
+          await api.post('users', {
+            name,
+            email,
+            password,
+            whatsapp,
+          }).then(() => {
+            signIn(email, password);
+          });
+          history.push("/");
+        } catch (err) {
+          alert(err);
+        }
+      }
 
-  async function handleRegister(e: FormEvent) {
-    e.preventDefault();
-    try {
-      await api.post('users', {
-        name,
-        email,
-        password,
-        avatar,
-        whatsapp,
-        bio,
-      }).then(() => {
-        signIn(email, password);
-      });
-      history.push("/");
-    } catch (err) {
-      alert(err);
-    }
-  }
+    function handleTogglePasswordVisible(){
+        setIsPasswordVisible(!isPasswordVisible);
+      }
 
   return (
-    <div id="page-register-form" className="container">
-      <PageHeader
-        title="Que maneiro que você quer se registrar."
-        description="O primeiro passo é preencher o formulario de cadastro"
-      />
-      <main>
-        <form onSubmit={handleRegister}>
-          <fieldset>
-            <legend>Crie sua conta</legend>
-            <Input
-              name="name"
-              label="Nome completo"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <Input
-              name="email"
-              label="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-              name="avatar"
-              label="Avatar"
-              value={avatar}
-              onChange={(e) => setAvatar(e.target.value)}
-            />
-            <Input
-              name="whatsapp"
-              label="Whatsapp"
-              value={whatsapp}
-              onChange={(e) => setWhatsapp(e.target.value)}
-            />
-            <Textarea
-              name="bio"
-              label="Biografia"
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-            />
-            <Input
-              type="password"
-              name="Senha"
-              label="Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </fieldset>
-          <footer>
-            <button type="submit">
-              Salvar cadastro
-            </button>
-
-            <button onClick={() => history.push('/login')}>
-              Já tenho cadastro
-            </button>
-          </footer>
-        </form>
-      </main>
-    </div>
+      <>
+        <div id="register-form-container">
+            <div className="left-container">
+                <div className="top-bar-container">
+                    <Link to="/login">
+                        <img src={backIcon} alt="Voltar"/>
+                    </Link>
+                </div>
+            <form onSubmit={handleRegister}>
+                <h2>Cadastro</h2>
+                <p>Preencha os dados abaixo para começar.</p>
+                <Input
+                    id="leftborder"
+                    name="name"
+                    placeholder="Nome completo"
+                    label={name ? "Nome completo" : undefined}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    />
+                <Input
+                    id="leftborder"
+                    name="whatsapp"
+                    placeholder="Whatsapp"
+                    label={whatsapp ? "Whatsapp" : undefined}
+                    value={whatsapp}
+                    onChange={(e) => setWhatsapp(e.target.value)}
+                    />
+                <Input
+                    id="leftborder"
+                    name="email"
+                    placeholder="E-mail"
+                    label={email ? "E-mail" : undefined}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
+                <div className="password-container">
+                <Input
+                    className="leftboarder"
+                    id="leftborder"
+                    placeholder="Senha"
+                    type={isPasswordVisible ? "text" : "password"}
+                    name="password"
+                    label={password ? "Senha" : undefined}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                { isPasswordVisible 
+                ? <img src={eyeBlockImg} onClick={handleTogglePasswordVisible} alt="Mostrar senha"/>
+                : <img src={eyeImg} onClick={handleTogglePasswordVisible} alt="Esconder senha"/>}
+                </div>
+                <footer>
+                    <button type="submit">
+                    Concluir cadastro
+                    </button>
+                </footer>
+                </form>
+            </div>
+            <div className="register-logo-container">
+                    <img src={logoImg} alt="Proffy"/>
+                    <h2>Sua plataforma de estudos online.</h2>
+            </div>
+        </div>
+      </>
   );
-};
+}
 
 export default Register;
