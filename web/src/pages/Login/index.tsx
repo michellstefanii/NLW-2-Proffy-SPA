@@ -68,7 +68,7 @@ const Login: React.FC = () => {
                     <div className="form-footer">
                         <input type="checkbox" name="checkbox" id="checkbox" />
                         <label htmlFor="checkbox"><span></span>{'  '}Lembrar-me</label>
-                        <label>Esqueci minha senha</label>
+                        <label onClick={() => history.push('/recoverypassword')}>Esqueci minha senha</label>
                     </div>
                 <footer>
                     <button type="submit">

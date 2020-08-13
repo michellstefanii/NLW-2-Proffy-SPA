@@ -6,7 +6,7 @@ import TeacherForm from './pages/TeacherForm';
 import Register from './pages/Register';
 import AuthContext from './contexts/auth';
 import Login from './pages/Login';
-import Success from './pages/Success';
+import RecoveryPassword from './pages/RecoveryPassword';
 
 function CustomRoute({ isPrivate , ...rest }: any) {
 
@@ -29,8 +29,8 @@ const Routes: React.FC = () => {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/recoverypassword" component={RecoveryPassword} />
           <CustomRoute isPrivate path="/" exact component={Landing} />
-          <CustomRoute isPrivate path="/success" exact component={Success} />
           <CustomRoute isPrivate path="/study" component={TeacherList} />
           <CustomRoute isPrivate path="/give-classes" component={TeacherForm} />
         </Switch>

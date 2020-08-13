@@ -35,7 +35,6 @@ const Landing: React.FC = () => {
              alt="Plataforma de estudos"
              className="hero-image"
             />
-
         <div className="buttons-container">
             <Link to="/study" className="study">
                 <img src={studyIcon} alt="Estudar"/>
