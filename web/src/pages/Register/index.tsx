@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
 import api from "../../services/api";
 import AuthContext from "../../contexts/auth";
@@ -13,7 +13,6 @@ import './styles.css';
 import Success from '../../components/Success';
 
 const Register: React.FC = () => {
-    const history = useHistory();
 
     const { signIn } = useContext(AuthContext);
     const [success, setSuccess] = useState(false);

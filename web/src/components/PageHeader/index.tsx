@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg'
 import backIcon from '../../assets/images/icons/back.svg'
+import poweroffIcon from '../../assets/images/icons/poweroff.svg'
 
 import './styles.css';
 import AuthContext from '../../contexts/auth';
@@ -21,7 +22,7 @@ const PageHeader: React.FC<Props> = (props) => {
 
   function logged() {
     if (signed){
-    return (<div><p>Olá {user.name}</p> <button onClick={handleSignOut}> Sair</button></div>)}
+      return (<div className="user-logged" ><p><a href="/login"><img src={user.avatar} alt="" /><p>{user.name}</p></a></p><button onClick={handleSignOut} ><img src={poweroffIcon} alt="" /></button></div>)}
   }
   
   return (

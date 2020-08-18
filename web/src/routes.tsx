@@ -27,9 +27,9 @@ const Routes: React.FC = () => {
   return (
       <Router>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/recoverypassword" component={RecoveryPassword} />
+          <CustomRoute path="/login" component={Login} />
+          <CustomRoute path="/register" component={Register} />
+          <CustomRoute path="/recoverypassword" component={RecoveryPassword} />
           <CustomRoute isPrivate path="/" exact component={Landing} />
           <CustomRoute isPrivate path="/study" component={TeacherList} />
           <CustomRoute isPrivate path="/give-classes" component={TeacherForm} />

@@ -1,13 +1,59 @@
 #page-landing {
     width: 100vw;
     height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     color: var(--color-text-in-primary);
-    background: var(--color-primary);
+}
+
+.user-logged {
+    background: #8257E5;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.user-logged p {
+    float: right;
+    margin-top: 7px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 30px;    
+    color: #D4C2FF;
+}
+
+.user-logged p img {
+    width: 40px;
+    border-radius: 50px;
+}
+
+.user-logged a {
+    transition: opacity 0.2s;
+}
+
+.user-logged a:hover {
+    opacity: 0.8;
+}
+
+.user-logged button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: #774DD6;
+}
+
+.user-logged button:hover {
+    background: #6945be;
+}
+
+.user-logged button img {
+    width: 20px;
+    margin-top: 4px;
+    color: #000;
 }
 
 .logo-container img {
@@ -15,12 +61,14 @@
 }
 
 .hero-image {
-    width: 100%
+    width: 100%;
+    background: #8257E5;
 }
 
 .logo-container {
+    background-color: #8257E5;
     text-align: center;
-    margin-bottom: 3.2rem;
+    padding-bottom: 3.2rem;
 }
 
 .logo-container h2 {
@@ -30,10 +78,48 @@
     margin-top: 0.8rem;
 }
 
+.welcome {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    font-family: Poppins;
+    color: #6A6180;
+    font-size: 2.1rem;
+    line-height: 30px;
+}
+
+.welcome strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.welcome p {
+    font-weight: bold;
+}
+
+.total-connections {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    color: #9C98A6;
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img {
+    margin-left: 0.8rem;
+}
+
 .buttons-container {
     display: flex;
     justify-content: center;
-    margin: 3.2rem 0;
+    margin: 3.2rem 1rem;
 }
 
 .buttons-container a {
@@ -80,39 +166,39 @@
     margin-right: 2.4rem;
 }
 
-.total-connections {
-    font-size: 1.4rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.total-connections img {
-    margin-left: 0.8rem;
-}
-
 @media (min-width: 1100px) {
     #page-landing-content {
-        max-width: 1100px;
-
+        max-width: 100%;
         display: grid;
-        grid-template-rows: 350px 1fr;
+        grid-template-rows: 12% 88%;
         grid-template-columns: 2fr 1fr 1fr;
-        grid-template-areas: 
-            "logo hero hero"
-            "buttons buttons total"
-        ;
+        grid-template-areas:
+                "user user user"
+                "cent cent cent"
+                "welcome buttons buttons";
+    }
+
+    .user-logged  {
+        grid-area: user;
+        padding: 2rem 15rem;
+    }
+
+    #page-center {
+        grid-area: cent;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        background: #8257E5;
     }
 
     .logo-container {
-        grid-area: logo;
         align-self: center;
         margin: 0;
         text-align: left;
     }
 
     .hero-image {
-        grid-area: hero;
+        width: 35%;
         justify-self: end;
     }
 
@@ -125,6 +211,25 @@
         height: 100%;
     }
 
+    .welcome {
+        grid-area: welcome;
+        justify-self: start;
+        padding-left: 15rem;
+        padding-top: 3rem;
+        align-items: flex-start;
+    }
+
+    .total-connections {
+        grid-area: welcome;
+        justify-self: end;
+        padding-right: 3rem;
+    }
+
+    .total-connections p {
+        text-align: end;
+        max-width: 15rem;
+    }
+
     .buttons-container {
         grid-area: buttons;
         justify-content: flex-start;
@@ -134,8 +239,4 @@
         font-size: 2.4rem;
     }
 
-    .total-connections {
-        grid-area: total;
-        justify-self: end;
-    }
-}
+ }

@@ -1,7 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
-import api from "../../services/api";
 
 import logoImg from '../../assets/images/logo.svg'
 import backIcon from '../../assets/images/icons/back.svg'
@@ -21,7 +20,7 @@ const RecoveryPassword: React.FC = () => {
         } catch (err) {
           alert(err);
         }
-      }
+    }
 
   return (
       <>

@@ -24,12 +24,14 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState(() => {
 
     if(JSON.parse(localStorage.getItem('user')!) && token) {
-      let { id, name, email } = JSON.parse(localStorage.getItem('user')!)
+      let { id, name, email, avatar, bio } = JSON.parse(localStorage.getItem('user')!)
 
     return {
       id: id ? id : 0,
       name: name ? name : '',
       email: email ? email : '',
+      avatar: avatar ? avatar : '',
+      bio: bio ? bio : ''
     }} else {
       return {
         id: 0,
@@ -52,7 +54,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         signOut()
       }
     }
-  }, [user.id, token]);
+  }, [user.id]);
 
   async function signIn(email: string, password: string) {
 
