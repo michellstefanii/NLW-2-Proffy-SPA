@@ -54,7 +54,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         signOut()
       }
     }
-  }, [user.id]);
+  }, [user.id, token]);
 
   async function signIn(email: string, password: string) {
 

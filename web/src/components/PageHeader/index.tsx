@@ -22,7 +22,7 @@ const PageHeader: React.FC<Props> = (props) => {
 
   function logged() {
     if (signed){
-      return (<div className="user-logged" ><p><a href="/login"><img src={user.avatar} alt="" /><p>{user.name}</p></a></p><button onClick={handleSignOut} ><img src={poweroffIcon} alt="" /></button></div>)}
+      return (<div className="user-logged" ><button onClick={handleSignOut} ><img src={poweroffIcon} alt="" /></button></div>)}
   }
   
   return (
@@ -39,6 +39,8 @@ const PageHeader: React.FC<Props> = (props) => {
       { props.description && <p>{props.description}</p> }
       
       {props.children}
+
+      {signed ? <div className="user" ><a href="/login"><img src={user.avatar} alt="" /><h5>{user.name}</h5></a></div> : undefined }
     </div>
   </header>
   );

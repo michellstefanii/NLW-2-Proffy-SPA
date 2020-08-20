@@ -5,22 +5,53 @@
 }
 
 .page-header .top-bar-container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--color-text-in-primary);
-    padding: 1.6rem 0;
+    padding: 0.6rem 1rem;
+    background-color: #774DD6;
+    border-bottom: 1px solid #6842C2;
 }
 
 .page-header .user-logged {
+    background-color: #774DD6;
     padding: 0;
 }
 
-.page-header .user-logged button {
-    margin-left: 10rem;
-    margin-top: 0.5rem;
+.user {
+    background: #8257E5;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+}
+
+.user h5 {
+    float: right;
+    margin-top: 4px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 30px;    
+    color: #D4C2FF;
+}
+
+.user img {
+    width: 40px;
+    border-radius: 50px;
+}
+
+.user a {
+    transition: opacity 0.2s;
+}
+
+.user a:hover {
+    opacity: 0.8;
 }
 
 .page-header .top-bar-container > img {
@@ -54,8 +85,11 @@
         height: 340px;
     }
 
-    .page-header .top-bar-container {
-        max-width: 1100px;
+    @media (min-width: 900px) {
+        .page-header .top-bar-container {
+            max-width: 100%;
+            padding: 0.6rem 30rem;
+        }
     }
 
     .page-header .header-content {
