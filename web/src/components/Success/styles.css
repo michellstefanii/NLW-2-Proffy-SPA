@@ -1,61 +1,61 @@
 #sucess-container {
-    width: 100vw;
-    height: 100vh;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    color: var(--color-text-in-primary);
-    background: var(--color-primary);
-    
-    background-image: url("../../assets/images/Background2.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: var(--color-text-in-primary);
+  background: var(--color-primary);
+
+  background-image: url("../../assets/images/Background2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #sucess-container img {
-   margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
 #sucess-container h1 {
-   font-family: Archivo;
-   font-style: normal;
-   font-weight: bold;
-   line-height: 5rem;
-   font-size: 5.4rem;
-   text-align: center;
-   color: #FFF;
-   margin-bottom: 2rem;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 5rem;
+  font-size: 5.4rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
 }
 
 #sucess-container p {
-   font-family: Poppins;
-   font-style: normal;
-   font-weight: normal;
-   text-align: center;
-   font-size: 1.6rem;
-   line-height: 26px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 26px;
 }
 
 #sucess-container button {
-   width: 197px;
-   height: 56px;
-   background: #04D361 ;
-   border-radius: 8px;
-   font-family: Archivo;
-   font-style: normal;
-   font-weight: 600;
-   font-size: 16px;
-   line-height: 26px;
-   color: #FFF;
-   border: none;
-   outline: none;
-   cursor: pointer;
-   margin-top: 7rem;
+  width: 197px;
+  height: 56px;
+  background: #04d361;
+  border-radius: 8px;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 7rem;
 }
 
 #sucess-container button:hover {
-   background: #04BF58;              
+  background: #04bf58;
 }

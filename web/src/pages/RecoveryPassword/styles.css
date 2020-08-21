@@ -1,181 +1,180 @@
 #recoverypassword-form-container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-#recoverypassword-form-container .recoverypassword-logo-container  {
-    display: none;
+#recoverypassword-form-container .recoverypassword-logo-container {
+  display: none;
 }
 
 #recoverypassword-form-container .left-container {
-    flex: 1;
-    color: #E5E5E5;
+  flex: 1;
+  color: #e5e5e5;
 }
 
 #recoverypassword-form-container .left-container .top-bar-container {
-    position: relative;
-    text-align: center;
-    left: -15rem;
-    top: 1rem;
-    margin-bottom: 5rem;
+  position: relative;
+  text-align: center;
+  left: -15rem;
+  top: 1rem;
+  margin-bottom: 5rem;
 }
 
 #recoverypassword-form-container .left-container .top-bar-container a {
-    height: 3.2rem;
-    transition: opacity 0.2s;
+  height: 3.2rem;
+  transition: opacity 0.2s;
 }
 
 #recoverypassword-form-container .left-container .top-bar-container a:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 #recoverypassword-form-container .left-container .top-bar-container > img {
-    height: 1.6rem;
+  height: 1.6rem;
 }
 
 #recoverypassword-form-container .left-container form {
-    width: 100%;
-    max-width: 74rem;
-    border-radius: 0.8rem;
-    margin: -3.2rem auto 3.2rem;
-    overflow: hidden;
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  overflow: hidden;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-
 #recoverypassword-form-container .left-container form h2 {
-    max-width: 30rem;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
-    color: #32264D;
-    margin-bottom: 1.5rem;
-    margin-left: -6rem;
+  max-width: 30rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 36px;
+  color: #32264d;
+  margin-bottom: 1.5rem;
+  margin-left: -6rem;
 }
 
 #recoverypassword-form-container .left-container form p {
-    margin-bottom: 4rem;   
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.6rem;
-    line-height: 26px;
-    color: #6A6180;
-    margin-left: -3rem;
+  margin-bottom: 4rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 26px;
+  color: #6a6180;
+  margin-left: -3rem;
 }
 
 #recoverypassword-form-container .left-container form #leftborder {
-    width: 352px;
-    height: 72px;
-    background: #FAFAFC;
-    border: 1px solid #E6E6F0;
-    box-sizing: border-box;
-    border-radius: 8px 8px 8px 8px;
-    margin-top: 0;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #9C98A6;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
+  width: 352px;
+  height: 72px;
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  box-sizing: border-box;
+  border-radius: 8px 8px 8px 8px;
+  margin-top: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9c98a6;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 }
 
-
-#recoverypassword-form-container .left-container form .input-block:focus-within::after {
-    width: 2px;
-    height: calc(100% - 2rem);
-    content: '';
-    background: var(--color-primary-light);
-    position: absolute;
-    top: 1rem;
-    bottom: 1rem;
-    left: 0rem;
+#recoverypassword-form-container
+  .left-container
+  form
+  .input-block:focus-within::after {
+  width: 2px;
+  height: calc(100% - 2rem);
+  content: "";
+  background: var(--color-primary-light);
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0rem;
 }
 
 #recoverypassword-form-container .left-container form .input-block label {
-    font-size: 1.2rem;
-    position: absolute;
-    left: 1.1rem;  
-    top: 0.5rem; 
-    color: #C1BCCC;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 1.1rem;
+  top: 0.5rem;
+  color: #c1bccc;
 }
 
 #recoverypassword-form-container .left-container form footer button {
-    margin-top: 4rem;
-    width: 352px;
-    height: 56px;
-    border-style: none;
-    background: #DCDCE6;
-    border-radius: 8px;
-    outline: none;
+  margin-top: 4rem;
+  width: 352px;
+  height: 56px;
+  border-style: none;
+  background: #dcdce6;
+  border-radius: 8px;
+  outline: none;
 }
 
 #recoverypassword-form-container .left-container form footer button:hover {
-    background: #04D361;
-    color: #FFF;
-    border-radius: 8px;
-    cursor: pointer;
+  background: #04d361;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
-    #recoverypassword-form-container {
-        max-width: 100%;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "recoverypassword logo"
-        ;
-    }
+  #recoverypassword-form-container {
+    max-width: 100%;
 
-    #recoverypassword-form-container .recoverypassword-logo-container {
-        grid-area: logo;
-        display: flex;
-        flex-direction: column;
-        background-image: url("../../assets/images/Background.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: var(--color-primary);
-        height: 100%;
-        text-align: center;
-        color: var(--color-text-in-primary);
-        justify-content: center;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "recoverypassword logo";
+  }
 
-    #recoverypassword-form-container .recoverypassword-logo-container img {
-        height: 10rem;
-    }
-    
-    #recoverypassword-form-container .recoverypassword-logo-container h2 {
-        font-weight: 500;
-        font-size: 2.4rem;
-        line-height: 4.6rem;
-        margin-top: 0.8rem;
-    }
+  #recoverypassword-form-container .recoverypassword-logo-container {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/images/Background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-primary);
+    height: 100%;
+    text-align: center;
+    color: var(--color-text-in-primary);
+    justify-content: center;
+  }
 
-    #recoverypassword-form-container .left-container {
-        grid-area: recoverypassword;
-        color: #E5E5E5;
-    }
+  #recoverypassword-form-container .recoverypassword-logo-container img {
+    height: 10rem;
+  }
 
-    #recoverypassword-form-container .left-container .top-bar-container {
-        position: relative;
-        text-align: center;
-        left: -15rem;
-        margin-bottom: 0;
-        top: calc(100vh - 110vh);
-    }
+  #recoverypassword-form-container .recoverypassword-logo-container h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+  }
+
+  #recoverypassword-form-container .left-container {
+    grid-area: recoverypassword;
+    color: #e5e5e5;
+  }
+
+  #recoverypassword-form-container .left-container .top-bar-container {
+    position: relative;
+    text-align: center;
+    left: -15rem;
+    margin-bottom: 0;
+    top: calc(100vh - 110vh);
+  }
 }

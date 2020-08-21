@@ -1,242 +1,241 @@
 #page-landing {
-    width: 100vw;
-    height: 100vh;
-    color: var(--color-text-in-primary);
+  width: 100vw;
+  height: 100vh;
+  color: var(--color-text-in-primary);
 }
 
 .user-logged {
-    background: #8257E5;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
+  background: #8257e5;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .user-logged p {
-    float: right;
-    margin-top: 4px;
-    margin-left: 10px;
-    text-decoration: none;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 30px;    
-    color: #D4C2FF;
+  float: right;
+  margin-top: 4px;
+  margin-left: 10px;
+  text-decoration: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: #d4c2ff;
 }
 
 .user-logged p img {
-    width: 40px;
-    border-radius: 50px;
+  width: 40px;
+  border-radius: 50px;
 }
 
 .user-logged a {
-    transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 .user-logged a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .user-logged button {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    background: #774DD6;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #774dd6;
 }
 
 .user-logged button:hover {
-    background: #6945be;
+  background: #6945be;
 }
 
 .user-logged button img {
-    width: 20px;
-    margin-top: 4px;
-    color: #000;
+  width: 20px;
+  margin-top: 4px;
+  color: #000;
 }
 
 .logo-container img {
-    height: 10rem;
+  height: 10rem;
 }
 
 .hero-image {
-    width: 100%;
-    background: #8257E5;
+  width: 100%;
+  background: #8257e5;
 }
 
 .logo-container {
-    background-color: #8257E5;
-    text-align: center;
-    padding-bottom: 3.2rem;
+  background-color: #8257e5;
+  text-align: center;
+  padding-bottom: 3.2rem;
 }
 
 .logo-container h2 {
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 4.6rem;
-    margin-top: 0.8rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 4.6rem;
+  margin-top: 0.8rem;
 }
 
 .welcome {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
 
-    font-family: Poppins;
-    color: #6A6180;
-    font-size: 2.1rem;
-    line-height: 30px;
+  font-family: Poppins;
+  color: #6a6180;
+  font-size: 2.1rem;
+  line-height: 30px;
 }
 
 .welcome strong {
-    font-style: normal;
-    font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .welcome p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .total-connections {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    color: #9C98A6;
-    font-size: 1.4rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  color: #9c98a6;
+  font-size: 1.4rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .total-connections img {
-    margin-left: 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .buttons-container {
-    display: flex;
-    justify-content: center;
-    margin: 3.2rem 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 3.2rem 1rem;
 }
 
 .buttons-container a {
-    width: 30rem;
-    height: 10.4rem;
-    border-radius: 0.8rem;
-    font: 700 2.0rem Archivo;
+  width: 30rem;
+  height: 10.4rem;
+  border-radius: 0.8rem;
+  font: 700 2rem Archivo;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    text-decoration: none;
-    color: var(--color-button-text);
+  text-decoration: none;
+  color: var(--color-button-text);
 
-    transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .buttons-container a:first-child {
-    margin-right: 1.6rem;
+  margin-right: 1.6rem;
 }
 
 .buttons-container a img {
-    width: 4rem;
+  width: 4rem;
 }
 
 .buttons-container a.study {
-    background: var(--color-primary-lighter);
+  background: var(--color-primary-lighter);
 }
 
 .buttons-container a.give-classes {
-    background: var(--color-secundary);
+  background: var(--color-secundary);
 }
 
 .buttons-container a.study:hover {
-    background: var(--color-primary-light);
+  background: var(--color-primary-light);
 }
 
 .buttons-container a.give-classes:hover {
-    background: var(--color-secundary-dark);
+  background: var(--color-secundary-dark);
 }
 
 .buttons-container a img {
-    margin-right: 2.4rem;
+  margin-right: 2.4rem;
 }
 
 @media (min-width: 1100px) {
-    #page-landing-content {
-        max-width: 100%;
-        display: grid;
-        grid-template-rows: 12% 88%;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-areas:
-                "user user user"
-                "cent cent cent"
-                "welcome buttons buttons";
-    }
+  #page-landing-content {
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: 12% 88%;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+      "user user user"
+      "cent cent cent"
+      "welcome buttons buttons";
+  }
 
-    .user-logged  {
-        grid-area: user;
-        padding: 2rem 15rem;
-    }
+  .user-logged {
+    grid-area: user;
+    padding: 2rem 15rem;
+  }
 
-    #page-center {
-        grid-area: cent;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        background: #8257E5;
-    }
+  #page-center {
+    grid-area: cent;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #8257e5;
+  }
 
-    .logo-container {
-        align-self: center;
-        margin: 0;
-        text-align: left;
-    }
+  .logo-container {
+    align-self: center;
+    margin: 0;
+    text-align: left;
+  }
 
-    .hero-image {
-        width: 35%;
-        justify-self: end;
-    }
+  .hero-image {
+    width: 35%;
+    justify-self: end;
+  }
 
-    .logo-container h2 {
-        text-align: initial;
-        font-size: 3.6rem;
-    }
+  .logo-container h2 {
+    text-align: initial;
+    font-size: 3.6rem;
+  }
 
-    .logo-container img {
-        height: 100%;
-    }
+  .logo-container img {
+    height: 100%;
+  }
 
-    .welcome {
-        grid-area: welcome;
-        justify-self: start;
-        padding-left: 15rem;
-        padding-top: 3rem;
-        align-items: flex-start;
-    }
+  .welcome {
+    grid-area: welcome;
+    justify-self: start;
+    padding-left: 15rem;
+    padding-top: 3rem;
+    align-items: flex-start;
+  }
 
-    .total-connections {
-        grid-area: welcome;
-        justify-self: end;
-        padding-right: 3rem;
-    }
+  .total-connections {
+    grid-area: welcome;
+    justify-self: end;
+    padding-right: 3rem;
+  }
 
-    .total-connections p {
-        text-align: end;
-        max-width: 15rem;
-    }
+  .total-connections p {
+    text-align: end;
+    max-width: 15rem;
+  }
 
-    .buttons-container {
-        grid-area: buttons;
-        justify-content: flex-start;
-    }
+  .buttons-container {
+    grid-area: buttons;
+    justify-content: flex-start;
+  }
 
-    .buttons-container a {
-        font-size: 2.4rem;
-    }
-
- }
+  .buttons-container a {
+    font-size: 2.4rem;
+  }
+}

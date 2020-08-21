@@ -1,27 +1,27 @@
-import axios from 'axios'
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'http://localhost:3333',
+  baseURL: "http://localhost:3333",
 });
 
 // api.interceptors.response.use(
-//     response => {  
+//     response => {
 //       return response
 //     },
-//     error => { 
+//     error => {
 //       if (error.response.status === 401) {
 //         const requestConfig = error.config
-  
+
 //         localStorage.removeItem('token');
 //         localStorage.removeItem('name');
 //         api.defaults.headers.Authorization = undefined;
-//         window.location.reload()  
-  
+//         window.location.reload()
+
 //         return axios(requestConfig)
 //       }
-  
+
 //       return Promise.reject(error)
 //     },
 //   )
 
-export default api
+export default api;

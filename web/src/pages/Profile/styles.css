@@ -1,0 +1,235 @@
+#page-profile-form {
+  width: 100vw;
+  height: 100vh;
+}
+
+#page-profile-form .avatar img {
+  position: absolute;
+  top: 7rem;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  z-index: 120;
+}
+
+#page-profile-form .avatar img + img {
+  position: absolute;
+  margin-top: 7rem;
+  left: 8rem;
+  width: 32px;
+  height: 32px;
+  z-index: 120;
+  cursor: pointer;
+}
+
+#page-profile-form .user {
+  display: none;
+}
+
+#page-profile-form .header-content {
+  background-image: url("../../assets/images/Background3.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#page-profile-form .page-header .header-content {
+  margin-bottom: 6.4rem;
+}
+
+#page-profile-form main {
+  background-color: var(--color-box-base);
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  padding-top: 6.4rem;
+  overflow: hidden;
+  z-index: 110;
+  position: relative;
+}
+
+#page-profile-form main fieldset {
+  border: 0;
+  padding: 0 2.4rem;
+}
+
+#page-profile-form main fieldset + fieldset {
+  margin-top: 6.4rem;
+}
+
+#page-profile-form main fieldset legend {
+  font: 700 2.4rem Archivo;
+  color: var(--color-text-title);
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#page-profile-form main fieldset legend button {
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  font: 700 1.6rem Archivo;
+  cursor: pointer;
+  transition: color 0.2s;
+  outline: none;
+}
+
+#page-profile-form main fieldset legend button:hover {
+  color: var(--color-primary-dark);
+}
+
+#page-profile-form main fieldset .inline-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+#page-profile-form main fieldset .inline-input .input-block:first-child {
+  margin-top: 2.4rem;
+  width: 65%;
+}
+
+#page-profile-form main fieldset .inline-input .input-block + .input-block {
+  margin-top: 2.4rem;
+  width: 30%;
+}
+
+#page-profile-form main fieldset .input-block + .textarea-block,
+#page-profile-form main fieldset .select-block + .input-block {
+  margin-top: 2.4rem;
+}
+
+#page-profile-form main label {
+  color: var(--color-text-complement);
+}
+
+#page-profile-form main footer {
+  padding: 4rem 2.4rem;
+  background: var(--color-box-footer);
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 6.4rem;
+}
+
+#page-profile-form main footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text-complement);
+}
+
+#page-profile-form main footer p img {
+  margin-right: 2rem;
+}
+
+#page-profile-form main footer button {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secundary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin-top: 3.2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+#page-profile-form main footer button:hover {
+  background: var(--color-secundary-dark);
+}
+
+@media (min-width: 700px) {
+  #page-profile-form {
+    max-width: 100vw;
+  }
+
+  #page-profile-form .avatar img {
+    position: absolute;
+    top: 11rem;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    z-index: 120;
+  }
+
+  #page-profile-form .avatar img + img {
+    position: absolute;
+    margin-top: 10rem;
+    left: 11.5rem;
+    width: 48px;
+    height: 48px;
+    z-index: 120;
+    cursor: pointer;
+  }
+
+  #page-profile-form .page-header .header-content {
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #page-profile-form .page-header .header-content {
+    margin-bottom: 0;
+  }
+
+  #page-profile-form main fieldset {
+    padding: 0 6.4rem;
+  }
+
+  #page-profile-form main .schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+  }
+
+  #page-profile-form main .schedule-item .input-block {
+    margin-top: 0 !important;
+  }
+
+  #page-profile-form main footer {
+    padding: 4rem 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #page-profile-form main footer p {
+    justify-content: space-between;
+  }
+
+  #page-profile-form main footer button {
+    width: 20rem;
+    margin-top: 0;
+  }
+}

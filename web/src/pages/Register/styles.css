@@ -1,208 +1,209 @@
 #register-form-container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-#register-form-container .register-logo-container  {
-    display: none;
+#register-form-container .register-logo-container {
+  display: none;
 }
 
 #register-form-container .left-container {
-    flex: 1;
-    color: #E5E5E5;
+  flex: 1;
+  color: #e5e5e5;
 }
 
 #register-form-container .left-container .top-bar-container {
-    position: relative;
-    text-align: center;
-    left: -15rem;
-    top: 1rem;
-    margin-bottom: 5rem;
+  position: relative;
+  text-align: center;
+  left: -15rem;
+  top: 1rem;
+  margin-bottom: 5rem;
 }
 
 #register-form-container .left-container .top-bar-container a {
-    height: 3.2rem;
-    transition: opacity 0.2s;
+  height: 3.2rem;
+  transition: opacity 0.2s;
 }
 
 #register-form-container .left-container .top-bar-container a:hover {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 #register-form-container .left-container .top-bar-container > img {
-    height: 1.6rem;
+  height: 1.6rem;
 }
 
 #register-form-container .left-container form {
-    width: 100%;
-    max-width: 74rem;
-    border-radius: 0.8rem;
-    margin: -3.2rem auto 3.2rem;
-    overflow: hidden;
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  overflow: hidden;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-
 #register-form-container .left-container form h2 {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
-    color: #32264D;
-    margin-bottom: 1.5rem;
-    margin-left: -18rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 36px;
+  color: #32264d;
+  margin-bottom: 1.5rem;
+  margin-left: -18rem;
 }
 
 #register-form-container .left-container form p {
-    margin-bottom: 4rem;   
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.6rem;
-    line-height: 26px;
-    color: #6A6180;
-    margin-left: -10rem;
-    max-width: 25rem;
+  margin-bottom: 4rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 26px;
+  color: #6a6180;
+  margin-left: -10rem;
+  max-width: 25rem;
 }
 
 #register-form-container .left-container form #leftborder {
-    width: 352px;
-    height: 72px;
-    background: #FAFAFC;
-    border: 1px solid #E6E6F0;
-    box-sizing: border-box;
-    border-radius: 8px 8px 0px 0px;
-    margin-top: 0;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #9C98A6;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
+  width: 352px;
+  height: 72px;
+  background: #fafafc;
+  border: 1px solid #e6e6f0;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9c98a6;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 }
 
 #register-form-container .left-container form .input-block + .input-block {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-#register-form-container .left-container form .input-block + .input-block #leftborder {
-    border-top: none;
-    border-radius: 0px 0px 0px 0px;
+#register-form-container
+  .left-container
+  form
+  .input-block
+  + .input-block
+  #leftborder {
+  border-top: none;
+  border-radius: 0px 0px 0px 0px;
 }
 
 #register-form-container .left-container form .input-block:focus-within::after {
-    width: 2px;
-    height: calc(100% - 2rem);
-    content: '';
-    background: var(--color-primary-light);
-    position: absolute;
-    top: 1rem;
-    bottom: 1rem;
-    left: 0rem;
+  width: 2px;
+  height: calc(100% - 2rem);
+  content: "";
+  background: var(--color-primary-light);
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0rem;
 }
 
 #register-form-container .left-container form .input-block label {
-    font-size: 1.2rem;
-    position: absolute;
-    left: 1.1rem;  
-    top: 0.5rem; 
-    color: #C1BCCC;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 1.1rem;
+  top: 0.5rem;
+  color: #c1bccc;
 }
 
 #register-form-container .left-container form .password-container {
-    position: relative;
+  position: relative;
 }
 
 #register-form-container .left-container form .password-container #leftborder {
-    border-top: none;
-    border-radius: 0px 0px 8px 8px;
+  border-top: none;
+  border-radius: 0px 0px 8px 8px;
 }
 
-
 #register-form-container .left-container form .password-container img {
-    width: 22px;
-    height: 20px;
-    position: absolute;
-    top: 2.5rem;
-    right: 3rem;
-    cursor: pointer;
+  width: 22px;
+  height: 20px;
+  position: absolute;
+  top: 2.5rem;
+  right: 3rem;
+  cursor: pointer;
 }
 
 #register-form-container .left-container form footer button {
-    margin-top: 4rem;
-    width: 352px;
-    height: 56px;
-    border-style: none;
-    background: #DCDCE6;
-    border-radius: 8px;
-    outline: none;
+  margin-top: 4rem;
+  width: 352px;
+  height: 56px;
+  border-style: none;
+  background: #dcdce6;
+  border-radius: 8px;
+  outline: none;
 }
 
 #register-form-container .left-container form footer button:hover {
-    background: #04D361;
-    color: #FFF;
-    border-radius: 8px;
-    cursor: pointer;
+  background: #04d361;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
-    #register-form-container {
-        max-width: 100%;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "register logo"
-        ;
-    }
+  #register-form-container {
+    max-width: 100%;
 
-    #register-form-container .register-logo-container {
-        grid-area: logo;
-        display: flex;
-        flex-direction: column;
-        background-image: url("../../assets/images/Background.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: var(--color-primary);
-        height: 100%;
-        text-align: center;
-        color: var(--color-text-in-primary);
-        justify-content: center;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "register logo";
+  }
 
-    #register-form-container .register-logo-container img {
-        height: 10rem;
-    }
-    
-    #register-form-container .register-logo-container h2 {
-        font-weight: 500;
-        font-size: 2.4rem;
-        line-height: 4.6rem;
-        margin-top: 0.8rem;
-    }
+  #register-form-container .register-logo-container {
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/images/Background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-primary);
+    height: 100%;
+    text-align: center;
+    color: var(--color-text-in-primary);
+    justify-content: center;
+  }
 
-    #register-form-container .left-container {
-        grid-area: register;
-        color: #E5E5E5;
-    }
+  #register-form-container .register-logo-container img {
+    height: 10rem;
+  }
 
-    #register-form-container .left-container .top-bar-container {
-        position: relative;
-        text-align: center;
-        left: -15rem;
-        margin-bottom: 0;
-        top: calc(100vh - 110vh);
-    }
+  #register-form-container .register-logo-container h2 {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+  }
+
+  #register-form-container .left-container {
+    grid-area: register;
+    color: #e5e5e5;
+  }
+
+  #register-form-container .left-container .top-bar-container {
+    position: relative;
+    text-align: center;
+    left: -15rem;
+    margin-bottom: 0;
+    top: calc(100vh - 110vh);
+  }
 }
