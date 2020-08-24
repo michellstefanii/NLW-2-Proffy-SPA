@@ -14,6 +14,7 @@ const connectionsController = new ConnectionsController();
 routes.post('/users', usersController.create);
 // Session
 routes.post('/users/auth', usersController.auth)
+routes.put('/users/:id', authMiddleware.auth, usersController.update)
 
 routes.post('/users/authenticated', authMiddleware.auth, usersController.authenticated)
 
@@ -22,7 +23,5 @@ routes.get('/classes', authMiddleware.auth, classesController.index);
 
 routes.post('/connections', authMiddleware.auth, connectionsController.create);
 routes.get('/connections', connectionsController.index);
-
-
 
 export default routes;

@@ -8,6 +8,7 @@ import studyIcon from "../../assets/images/icons/study.svg";
 import giveClassesIcon from "../../assets/images/icons/give-classes.svg";
 import purpleHeartIcon from "../../assets/images/icons/purple-heart.svg";
 import poweroffIcon from "../../assets/images/icons/poweroff.svg";
+import AvatarIcon from "../../assets/images/icons/avatar-person.svg";
 
 import api from "../../services/api";
 
@@ -35,10 +36,10 @@ const Landing: React.FC = () => {
         {signed ? (
           <div className="user-logged">
             <p>
-              <a href="/profile">
-                <img src={user.avatar} alt="" />
+              <Link to="/profile">
+                  {user.avatar ? <img src={user.avatar} alt="" /> : <img src={AvatarIcon} alt="" />  }
                 <p>{user.name}</p>
-              </a>
+              </Link>
             </p>
             <button onClick={handleSignOut}>
               <img src={poweroffIcon} alt="" />

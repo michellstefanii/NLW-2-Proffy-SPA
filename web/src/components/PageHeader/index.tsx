@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo.svg";
 import backIcon from "../../assets/images/icons/back.svg";
 import poweroffIcon from "../../assets/images/icons/poweroff.svg";
+import AvatarIcon from "../../assets/images/icons/avatar-person.svg";
 
 import "./styles.css";
 import AuthContext from "../../contexts/auth";
@@ -43,10 +44,10 @@ const PageHeader: React.FC<Props> = (props) => {
 
         {signed ? (
           <div className="user">
-            <a href="/profile">
-              <img src={user.avatar} alt="" />
+            <Link to="/profile">
+              {user.avatar ? <img src={user.avatar} alt="" /> : <img src={AvatarIcon} alt="" />  }
               <h5>{user.name}</h5>
-            </a>
+            </Link>
           </div>
         ) : undefined}
       </div>

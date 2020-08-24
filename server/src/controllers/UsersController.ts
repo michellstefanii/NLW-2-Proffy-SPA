@@ -12,7 +12,7 @@ function generateToken(params = {}) {
 }
 
 export default class UsersController {
-    
+
     async create(req: Request, res: Response) {
         const {
             name,
@@ -22,32 +22,32 @@ export default class UsersController {
             whatsapp,
             bio
         } = req.body;
-    
+
         if (name == '' || email == '' || password == '' || avatar == '' || whatsapp == '' || bio == '')
             return res.status(400).send({ error: 'Preencha todos os dados' });
-    
+
         const use = await db('users').select().where('email', email);
         if (use[0])
             return res.status(400).send({ error: 'User already exists' });
-    
-        try { 
-        const salt = bcrypt.genSaltSync(10);
-    
-        await db('users').insert({
-            name,
-            email,
-            password: bcrypt.hashSync(password, salt),
-            avatar,
-            whatsapp,
-            bio
-        });
-    
-        return res.status(201).send();
-    } catch (err) {
-        return res.status(400).json({
-            error: 'Unexpected error while creating new user'
-        })
-    }
+
+        try {
+            const salt = bcrypt.genSaltSync(10);
+
+            await db('users').insert({
+                name,
+                email,
+                password: bcrypt.hashSync(password, salt),
+                avatar,
+                whatsapp,
+                bio
+            });
+
+            return res.status(201).send();
+        } catch (err) {
+            return res.status(400).json({
+                error: 'Unexpected error while creating new user'
+            })
+        }
     }
 
     async auth(req: Request, res: Response) {
@@ -57,72 +57,62 @@ export default class UsersController {
                 .where('email', req.body.email)
                 .then((users: any) => {
 
-                    if (users.length == undefined || users.length == 0) 
-                    return res.status(400).send({ error: 'User not found' })
+                    if (users.length == undefined || users.length == 0)
+                        return res.status(400).send({ error: 'User not found' })
 
                     if (!(bcrypt.compareSync(req.body.password, users[0].password)))
-                    return res.status(400).send({ error: 'Password error' })
-            
+                        return res.status(400).send({ error: 'Password error' })
+
                     const user = users[0]
                     return res.send({ user, token: generateToken({ id: user.id, email: user.email }) })
-                    })
+                })
 
-                } catch (err) {
-                    return res.status(400).json({
-                        error: 'Unexpected error auth'
-                    })
-                }
+        } catch (err) {
+            return res.status(400).json({
+                error: 'Unexpected error auth'
+            })
+        }
     }
 
     async authenticated(req: Request, res: Response) {
         return res.json();
     }
 
-    // async index(req, res, next) {
-    //     try {
-    //         const users = await db('users').select('*')
+    async update(req: Request, res: Response) {
+        try {
+            const { name, email, password, whatsapp, avatar, bio } = req.body
+            const { id } = req.params
 
-    //         if(users == '')
-    //             return res.status(400).send({ error: 'object not found' })
-    
-    //         return res.json(users)
-    //     } catch (error) {
-    //         next(error)
-    //     }
-    // },
+            if (name == '' || email == '' || password == '' || avatar == '' || whatsapp == '' || bio == '')
+                return res.status(400).send({ error: 'Preencha todos os dados' })
 
+            const salt = bcrypt.genSaltSync(10);
 
-    // async update(req, res, next) {
-    //     try {
-    //         const { name, email, password, level } = req.body
-    //         const { id } = req.params
+            const users = await db('users')
+                .select()
+                .where({ id })
 
-    //         if ( name == '' || email == '' || password == '' || level == '' )
-    //             return res.status(400).send({ error: 'Preencha todos os dados' })
+            if (!(users[0]))
+                return res.status(400).send({ error: 'Digite um id válido' })
 
-    //         const salt = bcrypt.genSaltSync(10);
+            await db('users')
+                .update({
+                    name,
+                    email,
+                    password: bcrypt.hashSync(password, salt),
+                    avatar,
+                    whatsapp,
+                    bio,
+                })
+                .where({ id })
 
-    //         const users = await db('users')
-    //             .select()
-    //             .where({ id })
-    
-    //         if (users == '')
-    //             return res.status(400).send({ error: 'Digite um id válido' })
-    
-    //         await db('users')
-    //             .update({
-    //             name,
-    //             email,
-    //             password: bcrypt.hashSync(password, salt),
-    //             level,
-    //             })
-    //             .where({ id })
-    
-    //         return res.json({ name, email, password, level })
+            return res.json()
 
-    //     } catch (error) {
-    //         next(error)
-    //     }
-    // },
+        } catch (err) {
+            return res.status(400).json({
+                error: 'Unexpected error'
+            })
+        }
+    }
 
 }

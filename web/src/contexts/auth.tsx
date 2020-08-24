@@ -7,6 +7,7 @@ interface AuthContextData {
     id: number;
     name: string;
     email: string;
+    whatsapp?: number;
     password?: string;
     avatar?: string;
     bio?: string;
@@ -23,16 +24,18 @@ export const AuthProvider: React.FC = ({ children }) => {
   });
   const [user, setUser] = useState(() => {
     if (JSON.parse(localStorage.getItem("user")!) && token) {
-      let { id, name, email, avatar, bio } = JSON.parse(
+      let { id, name, email, avatar, bio, password, whatsapp } = JSON.parse(
         localStorage.getItem("user")!
       );
 
       return {
         id: id ? id : 0,
         name: name ? name : "",
+        whatsapp: whatsapp ? whatsapp : 0,
         email: email ? email : "",
         avatar: avatar ? avatar : "",
         bio: bio ? bio : "",
+        password: password ? password : "",
       };
     } else {
       return {
